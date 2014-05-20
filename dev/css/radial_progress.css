@@ -1,0 +1,15 @@
+.progress {
+  position: absolute;
+  width: 200px;
+  height: 200px;
+  background-color: red;
+  clip: rect(0px, 100px, 200px, 0px);
+  transform: rotate(7deg);
+  -ms-transform: rotate(7deg);
+  /* IE 9 */
+  -webkit-transform: rotate(7deg);
+  /* Opera, Chrome, and Safari */ }
+  .progress .bar {
+    background-color: blue;
+    border-radius: 100px;
+    height: 200px; }

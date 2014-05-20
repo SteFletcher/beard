@@ -1,0 +1,21 @@
+$width: 200px;
+$height: 200px;
+$color: red;
+$bar_color: blue;
+$mask_color: white;
+.progress {
+	position: absolute;
+	width: $width;
+	height: $height;
+	background-color: $color;
+	clip: rect(0px, 100px, 200px, 0px);
+	transform:rotate(7deg);
+	-ms-transform:rotate(7deg); /* IE 9 */
+	-webkit-transform:rotate(7deg); /* Opera, Chrome, and Safari */
+		.bar{
+			background-color: $bar_color;
+			border-radius: $width/2;
+			height: $height;
+		}
+
+}
