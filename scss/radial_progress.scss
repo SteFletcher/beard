@@ -1,5 +1,7 @@
 $widget_color: #0095DD;
-
+.play_button{
+	transform: scale(.15); 
+}
 .play_button #progress_bar{
   transition: stroke-dashoffset 10s linear;
   stroke: $widget_color;

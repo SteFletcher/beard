@@ -4,10 +4,11 @@ var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
 var stripDebug = require('gulp-strip-debug');
 var minifyCSS = require('gulp-minify-css');
-var sass = require('gulp-sass');
+var sass = require('gulp-ruby-sass');
 var clean = require('gulp-clean');
 var rimraf = require('gulp-rimraf');
 var gutil = require('gulp-util');
+var prefix = require('gulp-autoprefixer');
 var fs = require('fs'),
     watch = require('gulp-watch'),
       debug = require('gulp-debug');
@@ -19,15 +20,17 @@ console.log("loading....");
 gulp.task('sassy', ['clean'], function() {
     gulp.src('./scss/*.scss')
         .pipe(sass({
-            sourceMap: 'sass',
-            sourceComments: 'map'}))
+            style: 'compact'}))
         .pipe(gulp.dest('./dev/css'));
+
+  console.log("sassy complete!");
 });
 
 gulp.task('css', ['sassy'],function() {
   gulp.src('./dev/css/*.css')
    .pipe(concat('site.css'))
-   .pipe(minifyCSS())
+  .pipe(prefix('last 1 version'))
+   //.pipe(minifyCSS())
    .pipe(gulp.dest('./dev/css'));
 
   console.log("css complete!");
@@ -108,11 +111,11 @@ function notifyLivereload(event) {
 
    
  gulp.task('clean', function() {
-  try{
-    fs.unlinkSync('./dev/js/site.js');
-  }catch(err){
-    gutil.log('error occured while trying to remove files.');
-  }
+  // try{
+  //   fs.unlinkSync('./dev/js/site.js');
+  // }catch(err){
+  //   gutil.log('error occured while trying to remove files.');
+  // }
   try{
     fs.unlinkSync('./dev/css/site.css');
   }catch(err){

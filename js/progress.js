@@ -1,10 +1,10 @@
-function setOffset(r, $progress_bar, val){
+function setOffset(r, $progress_bar, val){ 
     var c = Math.PI*(r*2);
     var unitSize = c/100;
     var pct = (unitSize)*(100-val);    
     $progress_bar.css({ 'stroke-dashoffset': pct});
     //$progress_bar.cs s({ st rokeDashoffset: 564.45});
-  //$('#progress_bar').css({ strokeDashoffset: 564.45});
+  //$('#progress _bar').css({ strokeDashoffset: 564.45});
     console.log("pct: "+pct);
 }
 var arcRadiusPattern = /a (\d+)/i;
