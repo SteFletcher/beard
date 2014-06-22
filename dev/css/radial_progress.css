@@ -1,7 +1,6 @@
 .play_button #progress_bar {
   transition: stroke-dashoffset 10s linear;
   stroke: #0095DD;
-  stroke: #366;
   stroke-width: 1em; }
 
 .play_button #progress_bar_inner {
@@ -10,3 +9,5 @@
 
 .play_button #stopped {
   display: none; }
+
+/*# sourceMappingURL=data:application/json;base64,eyJ2ZXJzaW9uIjozLCJmaWxlIjoiIiwic291cmNlcyI6WyJzY3NzL3JhZGlhbF9wcm9ncmVzcy5zY3NzIl0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiJBQUVBLGFBQWE7RUFDWCxZQUFZO0VBQ1osUUFKYTtFQUtiLGNBQWM7O0FBRWhCLGFBQWE7RUFDWCxRQVJhO0VBU2IsY0FBYzs7QUFFaEIsYUFBYTtFQUNYLFNBQVMiLCJzb3VyY2VzQ29udGVudCI6WyIkd2lkZ2V0X2NvbG9yOiAjMDA5NUREO1xuXG4ucGxheV9idXR0b24gI3Byb2dyZXNzX2JhcntcbiAgdHJhbnNpdGlvbjogc3Ryb2tlLWRhc2hvZmZzZXQgMTBzIGxpbmVhcjtcbiAgc3Ryb2tlOiAkd2lkZ2V0X2NvbG9yO1xuICBzdHJva2Utd2lkdGg6IDFlbTtcbn1cbi5wbGF5X2J1dHRvbiAjcHJvZ3Jlc3NfYmFyX2lubmVyIHtcbiAgc3Ryb2tlOiAkd2lkZ2V0X2NvbG9yO1xuICBzdHJva2Utd2lkdGg6IDAuMmVtO1xufVxuLnBsYXlfYnV0dG9uICAjc3RvcHBlZHtcbiAgZGlzcGxheTogbm9uZTtcbn0iXX0=*/

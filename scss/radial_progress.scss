@@ -3,7 +3,6 @@ $widget_color: #0095DD;
 .play_button #progress_bar{
   transition: stroke-dashoffset 10s linear;
   stroke: $widget_color;
-  stroke: #366;
   stroke-width: 1em;
 }
 .play_button #progress_bar_inner {

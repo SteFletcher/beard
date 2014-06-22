@@ -2,13 +2,15 @@ var gulp = require('gulp');
 
 var concat = require('gulp-concat');
 var uglify = require('gulp-uglify');
-var imagemin = require('gulp-imagemin');
+var stripDebug = require('gulp-strip-debug');
 var minifyCSS = require('gulp-minify-css');
 var sass = require('gulp-sass');
 var clean = require('gulp-clean');
 var rimraf = require('gulp-rimraf');
 var gutil = require('gulp-util');
-var fs = require('fs');
+var fs = require('fs'),
+    watch = require('gulp-watch'),
+      debug = require('gulp-debug');
 
 
 console.log("loading....");
@@ -16,30 +18,50 @@ console.log("loading....");
 // Compile Our Sass
 gulp.task('sassy', ['clean'], function() {
     gulp.src('./scss/*.scss')
-        .pipe(sass())
+        .pipe(sass({
+            sourceMap: 'sass',
+            sourceComments: 'map'}))
         .pipe(gulp.dest('./dev/css'));
 });
 
 gulp.task('css', ['sassy'],function() {
-	gulp.src('./dev/css/*.css')
-	 .pipe(concat('site.css'))
-	 .pipe(minifyCSS())
-  	   .pipe(gulp.dest('./dev/css'));
+  gulp.src('./dev/css/*.css')
+   .pipe(concat('site.css'))
+   .pipe(minifyCSS())
+   .pipe(gulp.dest('./dev/css'));
+
+  console.log("css complete!");
 
 });
-   
- gulp.task('clean', function() {
- 	try{
-		fs.unlinkSync('./dev/css/site.css');
-	}catch(err){
-		gutil.log('error occured while trying to remove files.');
-	}
+
+gulp.task('js', function() {
+
+  console.log("JS starting!");
+	return gulp.src('./js/*.js')
+    .pipe(stripDebug())
+     .pipe(concat('site.js'))
+    //  .pipe(stripDebug())
+     .pipe(gulp.dest('./dev/js'));
+  console.log("JS complete!");
+
+});
+
+
+gulp.task('default', ['watch'], function(){
+  startExpress();
+  startLivereload();
 });
 
 gulp.task('watch', function() {
+
+  console.log("watching scss!");
     gulp.watch('./scss/*.scss', ['css']);
-    gulp.watch('./dev/*.htm', notifyLivereload);
-    gulp.watch('./dev/js/*.js', notifyLivereload);
+
+  console.log("watching js!");
+    var jswatcher = gulp.watch('./js/*.js', ['js']);
+
+  console.log("watching htm!");
+    gulp.watch('./dev/**/*.{htm,css,js}', notifyLivereload);
 
 });
 
@@ -70,9 +92,9 @@ function startExpress() {
 // Notifies livereload of changes detected
 // by `gulp.watch()` 
 function notifyLivereload(event) {
-  gutil.log('live re-loading!', gutil.colors.cyan('123'));
 
 	console.log("live re-loading!");
+  gutil.log('live re-loading!', gutil.colors.cyan(event.path));
   // `gulp.watch()` events provide an absolute path
   // so we need to make it relative to the server root
   var fileName = require('path').relative(EXPRESS_ROOT, event.path);
@@ -84,8 +106,16 @@ function notifyLivereload(event) {
   });
 }
 
-gulp.task('default', ['watch'], function(){
-  startExpress();
-  startLivereload();
+   
+ gulp.task('clean', function() {
+  try{
+    fs.unlinkSync('./dev/js/site.js');
+  }catch(err){
+    gutil.log('error occured while trying to remove files.');
+  }
+  try{
+    fs.unlinkSync('./dev/css/site.css');
+  }catch(err){
+    gutil.log('error occured while trying to remove files.');
+  }
 });
-

@@ -6,9 +6,8 @@ $niceblue: #0089cc;
   height: 100%;
   min-height: 100%;
 }
-body {
- /*@include background-image(linear-gradient($niceblue, $niceblue2));
-  @include radial-gradt(cirle at center center, #eee 10%, #1e5799 30%, #efefef);*/
+audio{
+  display: none;
 }
 #music-table{
   @include span-columns(10)

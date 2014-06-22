@@ -3,7 +3,7 @@ function setOffset(r, $progress_bar, val){
     var unitSize = c/100;
     var pct = (unitSize)*(100-val);    
     $progress_bar.css({ 'stroke-dashoffset': pct});
-    //$progress_bar.css({ strokeDashoffset: 564.45});
+    //$progress_bar.cs s({ st rokeDashoffset: 564.45});
   //$('#progress_bar').css({ strokeDashoffset: 564.45});
     console.log("pct: "+pct);
 }
