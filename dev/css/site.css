@@ -39,7 +39,7 @@ html, body {
 .progress-radial-bar {
   fill: white; 
 }
-.play_button { -webkit-transform: scale(0.15); transform: scale(0.15); }
+.play_button { -webkit-transform: scale(0.25); transform: scale(0.25); }
 
 .play_button #progress_bar { transition: stroke-dashoffset 10s linear; stroke: #0095dd; stroke-width: 1em; }
 
