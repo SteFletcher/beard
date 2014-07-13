@@ -1,5 +1,9 @@
 .dancingbars { -webkit-transform: scale(1); transform: scale(1); }
-.dancingbars .bar { fill: #0095dd; }
+.dancingbars .bar { color: #0095dd; }
+
+@-webkit-keyframes bounce {}
+
+@keyframes bounce {}
 
 * { box-sizing: border-box; }
 
@@ -32,7 +36,7 @@ html, body {
   display: block;
   margin-left: 50%;
   -webkit-transform: translate(-50%, 50%);
-  transform: translate(-50%, 50%);
+          transform: translate(-50%, 50%);
 }
 
 .progress-radial-track {

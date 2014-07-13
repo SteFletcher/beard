@@ -17,7 +17,7 @@ console.log("loading....");
 
 // Compile Our Sass
 gulp.task('sassy', ['clean'], function() {
-    gulp.src('./scss/*.scss')
+    gulp.src('./scss/**/*.scss')
         .pipe(sass({
             style: 'compact'}))
         .pipe(gulp.dest('./dev/css'));
