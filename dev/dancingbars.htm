@@ -6,10 +6,10 @@
   <head>
   <meta charset="utf-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
-  <script src="./js/main.js"></script>
-  <link rel="stylesheet" type="text/css" href="./css/radial_progress.css">
-  <title>Homemade Productions</title>
+  <script src="./js/jquery-1.7.2.min.js"></script>
+  <script src="./js/site.js"></script>
+  <link rel="stylesheet" type="text/css" href="./css/site.css">
+  <title>SVG - Dancing Bars</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
@@ -20,8 +20,11 @@
   <![endif]-->
   <!-- Add your site or application content here -->
   <div class="progress">
-      <div class="bar">
-      </div>
+      <svg class="dancingbars">
+        <rect class="bar" x="1cm" y="0cm" width="1cm" height="2cm"/>
+        <rect class="bar" x="2.5cm" y="0cm" width="1cm" height="0.5cm"/>
+        <rect class="bar" x="4.0cm" y="0cm" width="1cm" height="1.2cm"/>
+      </svg>
   </div>
 
 </body>

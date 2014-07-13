@@ -1,3 +1,6 @@
+.dancingbars { -webkit-transform: scale(1); transform: scale(1); }
+.dancingbars .bar { fill: #0095dd; }
+
 * { box-sizing: border-box; }
 
 html, body { height: 100%; min-height: 100%; }

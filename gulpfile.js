@@ -5,7 +5,6 @@ var uglify = require('gulp-uglify');
 var stripDebug = require('gulp-strip-debug');
 var minifyCSS = require('gulp-minify-css');
 var sass = require('gulp-ruby-sass');
-var clean = require('gulp-clean');
 var rimraf = require('gulp-rimraf');
 var gutil = require('gulp-util');
 var prefix = require('gulp-autoprefixer');
@@ -71,13 +70,13 @@ gulp.task('watch', function() {
 
 var EXPRESS_PORT = 4000;
 var EXPRESS_ROOT = __dirname;
-var LIVERELOAD_PORT = 35729;
+var LIVERELOAD_PORT = 357291;
 
 // We'll need a reference to the tinylr
 // object to send notifications of file changes
 var lr;
 function startLivereload() {
- 
+  console.log("starting live reload...");
   lr = require('tiny-lr')();
   lr.listen(LIVERELOAD_PORT);
 }
