@@ -1,0 +1,36 @@
+<svg class="play_button" width="{{math width '*' 2}}" height="{{math width '*' 2}}" viewPort="0 0 {{width}} {{width}}" version="1.1" xmlns="http://www.w3.org/2000/svg" >
+       <path
+       id="progress_bar"
+       d="
+       M {{width}}, {{width}}
+       m 0, -{{radius}}
+       a {{radius}},{{radius}} 0 0,1 0,{{math radius '*' 2}}
+       a -{{radius}},-{{radius}} 0 0,1 0,-{{math radius '*' 2}}
+       "
+       fill-opacity="0"
+       stroke-dasharray="{{calcCircum radius}}"
+       stroke-dashoffset="{{calcCircum radius}}"
+       style="stroke:#0095DD"
+       />
+       <path
+       id="progress_bar_inner"
+       d="
+       M {{width}}, {{width}}
+       m 0, -98
+       a 98,98 0 0,1 0,196
+       a -98,-98 0 0,1 0,-196
+       "
+       fill-opacity="0"
+       style="stroke:#0095DD"
+       transform="scale(1)"
+       />
+       <path id="playing" d="M 65 55
+       l 0 {{radius}}
+       l {{radius}} -{{math radius '/' 2}}
+       " style="fill:0095DD"/>
+       <path id="stopped" d="M 55 55
+       l {{radius}} 0
+       l 0 {{radius}}
+       l -{{radius}} 0
+       " style="fill:0095DD"/>              
+</svg>
