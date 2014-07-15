@@ -10,7 +10,7 @@ $widget_color: #0095DD;
 }
 .play_button #progress_bar_inner {
   stroke: $widget_color;
-  stroke-width: 0.2em;
+  stroke-width: 0.5em;
 }
 .play_button  #stopped{
   display: none;

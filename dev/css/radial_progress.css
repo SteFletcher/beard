@@ -2,6 +2,6 @@
 
 .play_button #progress_bar { transition: stroke-dashoffset 10s linear; stroke: #0095dd; stroke-width: 1em; }
 
-.play_button #progress_bar_inner { stroke: #0095dd; stroke-width: 0.2em; }
+.play_button #progress_bar_inner { stroke: #0095dd; stroke-width: 0.5em; }
 
 .play_button #stopped { display: none; }
