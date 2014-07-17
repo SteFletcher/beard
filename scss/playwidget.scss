@@ -1,16 +1,13 @@
 $widget_color: #0095DD;
 .play_button{
-	transform: scale(0.25);
-	 
+	transform: scale(1);
 }
 .play_button #progress_bar{
   transition: stroke-dashoffset 10s linear;
   stroke: $widget_color;
-  stroke-width: 1em;
 }
 .play_button #progress_bar_inner {
   stroke: $widget_color;
-  stroke-width: 0.5em;
 }
 .play_button  #stopped{
   display: none;

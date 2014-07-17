@@ -1,19 +1,19 @@
 <svg class="play_button" width="{{width}}" height="{{width}}" viewPort="0 0 {{math width '/' 2}} {{math width '/' 2}}" version="1.1" xmlns="http://www.w3.org/2000/svg" >
        <path
-       id="progress_bar"
+       id="progress_bar_inner"
        d="
        M {{math width '/' 2}}, {{math width '/' 2}}
-       m 0, -{{radius}}
-       a {{radius}},{{radius}} 0 0,1 0,{{math radius '*' 2}}
-       a -{{radius}},-{{radius}} 0 0,1 0,-{{math radius '*' 2}}
+       m 0, -{{innerRadius}}
+       a {{innerRadius}},{{innerRadius}} 0 0,1 0,{{math innerRadius '*' 2}}
+       a -{{innerRadius}},-{{innerRadius}} 0 0,1 0,-{{math innerRadius '*' 2}}
        "
        fill-opacity="0"
-       stroke-dasharray="{{calcCircum radius}}"
-       stroke-dashoffset="{{calcCircum radius}}"
-       style="stroke:#0095DD"
+       stroke-dasharray="{{calcCircum innerRadius}}"
+       stroke-dashoffset="{{calcCircum innerRadius}}"
+       style="stroke:#0095DD;stroke-width:{{innerStrokeWidth}}"
        />
        <path
-       id="progress_bar_inner"
+       id="progress_bar"
        d="
        M {{math width '/' 2}}, {{math width '/' 2}}
        m 0, -{{radius}}
@@ -24,16 +24,22 @@
        style="stroke:#0095DD;stroke-width:{{strokeWidth}}"
        transform="scale(1)"
        />
+
+       <!--circle cx="{{centroid.x}}" cy="{{centroid.y}}" r="10"/-->
+       <path id="stopped" d="M {{math width '/' 2}} {{math width '/' 2}}
+       m -{{math radius '/' 2}} -{{math radius '/' 2}}
+       l {{radius}} 0
+       l 0 {{radius}}
+       l -{{radius}} 0
+       " style="fill:0095DD"/>   
        <path id="playing" d="M 0 0
        m {{centroid.x}} {{centroid.y}}
        l 0 {{radius}}
        l {{radius}} -{{math radius '/' 2}}
-       " style="fill:0095DD"/>
-
-       <!--circle cx="{{centroid.x}}" cy="{{centroid.y}}" r="10"/-->
-       <path id="stopped" d="M 55 55
-       l {{radius}} 0
-       l 0 {{radius}}
-       l -{{radius}} 0
-       " style="fill:0095DD"/>              
+       " style="fill:0095DD"/>            
 </svg>
+{{title}}
+       <audio id="track1">
+              <source src="{{trackUri}}" type="audio/mpeg" />
+              <em>Sorry, your browser doesn't support HTML5 audio.</em>
+       </audio>

@@ -21,6 +21,8 @@ gulp.task('sassy', ['clean'], function() {
         .pipe(sass({
             style: 'compact'
         }))
+        .pipe(concat('site.css'))
+        .pipe(prefix('last 1 version'))
         .pipe(gulp.dest('./dev/css'));
 
     console.log("sassy complete!");
@@ -118,7 +120,9 @@ gulp.task('clean', function() {
     //   gutil.log('error occured while trying to remove files.');
     // }
     try {
-        fs.unlinkSync('./dev/css/site.css');
+        rimraf('./dev/css/site.css', function() {
+            console.log('removed site.css')
+        });
     } catch (err) {
         gutil.log('error occured while trying to remove files.');
     }

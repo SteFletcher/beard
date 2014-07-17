@@ -26,30 +26,10 @@ audio { display: none; }
 .title { font-family: "Arial Rounded MT Bold", "Helvetica Rounded", Arial, sans-serif; text-transform: uppercase; font-size: 92px; color: #f1ebe5; text-shadow: 2px 2px 0px #c4b59d, 0 0px 1px #fff; font-weight: bold; text-align: center; background: linear, to bottom, #ece4d9 0%, #e9dfd1 100%; -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); border-radius: 20px; }
 
 
-html, body {
-  width: 100%;
-  height: 100%;
-}
+.play_button { -webkit-transform: scale(1); transform: scale(1); }
 
-.progress-radial {
-  position: relative;
-  display: block;
-  margin-left: 50%;
-  -webkit-transform: translate(-50%, 50%);
-          transform: translate(-50%, 50%);
-}
+.play_button #progress_bar { transition: stroke-dashoffset 10s linear; stroke: #0095dd; }
 
-.progress-radial-track {
-  fill: #247fd8; 
-}
-
-.progress-radial-bar {
-  fill: white; 
-}
-.play_button { -webkit-transform: scale(0.25); transform: scale(0.25); }
-
-.play_button #progress_bar { transition: stroke-dashoffset 10s linear; stroke: #0095dd; stroke-width: 1em; }
-
-.play_button #progress_bar_inner { stroke: #0095dd; stroke-width: 0.5em; }
+.play_button #progress_bar_inner { stroke: #0095dd; }
 
 .play_button #stopped { display: none; }
