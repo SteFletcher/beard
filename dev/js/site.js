@@ -2790,6 +2790,7 @@ $.fn.audioWidget = function(options) {
     },
 
     setOffset = function(r, $progress_bar, val) {
+        console.log("r: " + r + " progress_bar: " + progress_bar + " val: " + val);
         var c = Math.PI * (r * 2);
         var unitSize = c / 100;
         var pct = (unitSize) * (100 - val);
@@ -2832,28 +2833,29 @@ $.fn.audioWidget = function(options) {
                 var _audioElement =
                     _this.find('audio'),
                     _progress_bar = $('#progress_bar_inner');
+                _audioElement[0].preload = 'metadata';
+
+                setOffset(_options.innerRadius, _progress_bar, 0);
                 if (_playing) {
+
+                    _audioElement[0].load();
                     var computedStyle = window.getComputedStyle(_progress_bar[0]),
                         offset = computedStyle.getPropertyValue('stroke-dashoffset');
 
                     _progress_bar.css({
-                        'stroke-dashoffset': offset,
+                        // 'stroke-dashoffset': offset,
                         transition: 'none'
                     });
 
-                    setOffset(_options.innerRadius, _progress_bar, 0);
-
                     _this.find('#playing').show();
                     _this.find('#stopped').hide();
-
-                    _audioElement[0].load();
                     _playing = false;
 
                 } else {
                     _this.find('#playing').hide();
                     _this.find('#stopped').show();
                     _playing = true;
-
+                    console.log("--> " + _audioElement[0].duration);
                     _progress_bar.css({
                         transition: "stroke-dashoffset " + _audioElement[0].duration + "s linear"
                     });

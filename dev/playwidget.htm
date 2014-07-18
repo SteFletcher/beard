@@ -1,4 +1,4 @@
-<svg class="play_button" width="{{width}}" height="{{width}}" viewPort="0 0 {{math width '/' 2}} {{math width '/' 2}}" version="1.1" xmlns="http://www.w3.org/2000/svg" >
+<svg class="play_button" width="{{width}}" height="{{width}}"  version="1.1" xmlns="http://www.w3.org/2000/svg" >
        <path
        id="progress_bar_inner"
        d="
@@ -31,12 +31,12 @@
        l {{radius}} 0
        l 0 {{radius}}
        l -{{radius}} 0
-       " style="fill:0095DD"/>   
+       " style="fill:#0095DD;stroke:#0095DD;"/>   
        <path id="playing" d="M 0 0
        m {{centroid.x}} {{centroid.y}}
        l 0 {{radius}}
        l {{radius}} -{{math radius '/' 2}}
-       " style="fill:0095DD"/>            
+       " style="fill:#0095DD;stroke:#0095DD;"/>            
 </svg>
 {{title}}
        <audio id="track1">
