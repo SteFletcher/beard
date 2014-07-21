@@ -1,11 +1,14 @@
-<svg class="play_button" width="{{width}}" height="{{width}}"  version="1.1" xmlns="http://www.w3.org/2000/svg" >
+<span
+    style="vertical-align: middle;
+    line-height: {{width}}px;">
+    <svg class="play_button" width="{{width}}" height="{{width}}"  version="1.1" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMinYMin" viewBox="0 0 {{width}} {{width}}" style='float:left;'>
        <path
        id="progress_bar_inner"
        d="
        M {{math width '/' 2}}, {{math width '/' 2}}
        m 0, -{{innerRadius}}
        a {{innerRadius}},{{innerRadius}} 0 0,1 0,{{math innerRadius '*' 2}}
-       a -{{innerRadius}},-{{innerRadius}} 0 0,1 0,-{{math innerRadius '*' 2}}
+       a -{{innerRadius}},-{{innerRadius}} 0 0,1 0,-{{math innerRadius '*' 2}} z
        "
        fill-opacity="0"
        stroke-dasharray="{{calcCircum innerRadius}}"
@@ -18,7 +21,7 @@
        M {{math width '/' 2}}, {{math width '/' 2}}
        m 0, -{{radius}}
        a {{radius}},{{radius}} 0 0,1 0,{{math radius '*' 2}}
-       a -{{radius}},-{{radius}} 0 0,1 0,-{{math radius '*' 2}}
+       a -{{radius}},-{{radius}} 0 0,1 0,-{{math radius '*' 2}} z
        "
        fill-opacity="0"
        style="stroke:#0095DD;stroke-width:{{strokeWidth}}"
@@ -30,15 +33,15 @@
        m -{{math radius '/' 2}} -{{math radius '/' 2}}
        l {{radius}} 0
        l 0 {{radius}}
-       l -{{radius}} 0
+       l -{{radius}} 0 z
        " style="fill:#0095DD;stroke:#0095DD;"/>   
        <path id="playing" d="M 0 0
        m {{centroid.x}} {{centroid.y}}
        l 0 {{radius}}
-       l {{radius}} -{{math radius '/' 2}}
+       l {{radius}} -{{math radius '/' 2}} z
        " style="fill:#0095DD;stroke:#0095DD;"/>            
 </svg>
-{{title}}
+{{title}}</span>
        <audio id="track1">
               <source src="{{trackUri}}" type="audio/mpeg" />
               <em>Sorry, your browser doesn't support HTML5 audio.</em>

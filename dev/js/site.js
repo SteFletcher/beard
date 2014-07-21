@@ -2872,6 +2872,10 @@ $(document).ready(function() {
         trackUri: './audio/dollar.mp3',
         title: 'Alo Bloc - Dollar'
     });
+    // $('#track_container').audioWidget({
+    //     trackUri: './audio/dollar.mp3',
+    //     title: 'Alo Bloc - Dollar'
+    // });
 });
 // function setOffset(r, $progress_bar, val){ 
 //     var c = Math.PI*(r*2);

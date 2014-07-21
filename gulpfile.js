@@ -73,7 +73,7 @@ gulp.task('watch', function() {
 
 var EXPRESS_PORT = 4000;
 var EXPRESS_ROOT = __dirname + '/dev';
-var LIVERELOAD_PORT = 357291;
+var LIVERELOAD_PORT = 35729;
 
 // We'll need a reference to the tinylr
 // object to send notifications of file changes

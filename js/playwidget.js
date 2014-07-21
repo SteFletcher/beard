@@ -91,4 +91,8 @@ $(document).ready(function() {
         trackUri: './audio/dollar.mp3',
         title: 'Alo Bloc - Dollar'
     });
+    // $('#track_container').audioWidget({
+    //     trackUri: './audio/dollar.mp3',
+    //     title: 'Alo Bloc - Dollar'
+    // });
 });
