@@ -1,6 +1,6 @@
 $widget_color: #0095DD;
 .play_button{
-	transform: scale(1);
+	vertical-align: middle;
 }
 .play_button #progress_bar{
   transition: stroke-dashoffset 10s linear;
@@ -11,4 +11,11 @@ $widget_color: #0095DD;
 }
 .play_button  #stopped{
   display: none;
+}
+
+#track1_container svg, #track1_container span{
+	display:inline-block;
+}
+#track1_container{
+	vertical-align: middle;
 }
