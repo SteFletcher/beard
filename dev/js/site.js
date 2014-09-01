@@ -14,6 +14,13 @@ function registerHandlebarsHelpers() {
     });
 
 
+    Handlebars.registerHelper('times', function(n, block) {
+        var accum = '';
+        for (var i = 0; i < n; ++i)
+            accum += block.fn(i);
+        return accum;
+    });
+
     Handlebars.registerHelper("calcCircum", function(radius, options) {
         radius = parseFloat(radius);
         return 2 * Math.PI * radius;
@@ -2779,6 +2786,34 @@ $(document).ready(function() {
         }
     }
 });
+
+$(document).ready(function() {
+    // $('#track1_container').audioWidget({
+    //     trackUri: './audio/dollar.mp3',
+    //     title: 'Alo Bloc - Dollar'
+    // });
+    loadSVGBarChart();
+
+    $('#svgchart').svgBarGraph({
+        width: 400,
+        height: 100,
+        graduationX: 50,
+        graduationY: 50,
+        plotPoints: [{
+            x: 0,
+            y: 100
+        }, {
+            x: 50,
+            y: 10
+        }, {
+            x: 100,
+            y: 10
+        }, {
+            x: 230,
+            y: 50
+        }]
+    });
+});
 $.fn.audioWidget = function(options) {
     getCentroid = function(radius, width) {
         var _width = width / 2,
@@ -2817,9 +2852,9 @@ $.fn.audioWidget = function(options) {
     _options = $.extend(defaults, options),
     _options.strokeWidth = 0.02 * _options.width,
     _options.innerStrokeWidth = 0.12 * _options.width,
-    _options.radius = _options.width / 2 - _options.strokeWidth / 2,
+    _options.radius = _options.width / 2 - _options.strokeWidth / 2, _options.radius -= 2
     _options.innerRadius = _options.radius - _options.innerStrokeWidth / 2,
-    //_options.innerRadius += 2,
+    _options.innerRadius += 2,
     _options.centroid = getCentroid(_options.radius, _options.width);
 
     $.get('/playwidget.htm',
@@ -2949,3 +2984,46 @@ $(document).ready(function() {
 
     });
 });
+function loadSVGBarChart() {
+
+    $.fn.svgBarGraph = function(options) {
+        _calcFinalDrop = function(array, height) {
+            return (height - array[array.length - 1].y);
+        }
+        var defaults = {
+            width: 100,
+            height: 100,
+            graduationX: 10,
+            graduationY: 10,
+            plotPoints: [{
+                //start time
+                x: 0,
+                // event id
+                y: 100
+            }]
+        };
+        var _options = $.extend(defaults, options),
+            _this = this;
+        _options.numberOfVertGridLines = (_options.width / _options.graduationX);
+        _options.numberOfHorizGridLines = (_options.height / _options.graduationY) + 1;
+        _options.finalDrop = _calcFinalDrop(_options.plotPoints, _options.height)
+        console.log(_options);
+        $.get('/svggraph.htm',
+            function(data, status) {
+                var renderer = Handlebars.compile(data);
+                console.log(_options);
+                var result = renderer(_options);
+                _this.html(result);
+                var hoverWidget = _this.find('#hoverWidget');
+                // add click handlers to points
+                hoverWidget.show();
+                _this.mousemove(function(event) {
+                    hoverWidget.attr({
+                        'cx': event.clientX
+                    });
+                });
+            });
+
+
+    }
+}

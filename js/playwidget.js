@@ -36,9 +36,9 @@ $.fn.audioWidget = function(options) {
     _options = $.extend(defaults, options),
     _options.strokeWidth = 0.02 * _options.width,
     _options.innerStrokeWidth = 0.12 * _options.width,
-    _options.radius = _options.width / 2 - _options.strokeWidth / 2,
+    _options.radius = _options.width / 2 - _options.strokeWidth / 2, _options.radius -= 2
     _options.innerRadius = _options.radius - _options.innerStrokeWidth / 2,
-    //_options.innerRadius += 2,
+    _options.innerRadius += 2,
     _options.centroid = getCentroid(_options.radius, _options.width);
 
     $.get('/playwidget.htm',
