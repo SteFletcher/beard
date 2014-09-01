@@ -25,50 +25,21 @@ audio { display: none; }
 svg { display: inherit; }
 
 
-/*
-Syntax error: Invalid CSS after ".play_button{": expected "}", was "<<<<<<< HEAD"
-        on line 3 of ./playwidget.scss
+.play_button { vertical-align: middle; }
 
-1: $widget_color: #0095DD;
-2: .play_button{
-3: <<<<<<< HEAD
-4: 	vertical-align: middle;
-5: =======
-6: <<<<<<< HEAD
-7: 	vertical-align: middle;
-8: =======
+.play_button #progress_bar { transition: stroke-dashoffset 10s linear; stroke: #0095dd; }
 
-Backtrace:
-./playwidget.scss:3
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/scss/parser.rb:1147:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/scss/parser.rb:1085:in `expected'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/scss/parser.rb:1080:in `tok!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/scss/parser.rb:536:in `block'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/scss/parser.rb:529:in `ruleset'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/scss/parser.rb:553:in `block_child'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/scss/parser.rb:546:in `block_contents'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/scss/parser.rb:82:in `stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/scss/parser.rb:27:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/engine.rb:342:in `_to_tree'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/engine.rb:315:in `_render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/engine.rb:262:in `render'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/plugin/compiler.rb:362:in `update_stylesheet'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/plugin/compiler.rb:203:in `block in update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/plugin/compiler.rb:201:in `each'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/plugin/compiler.rb:201:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/plugin.rb:81:in `update_stylesheets'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/exec.rb:443:in `watch_or_update'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/exec.rb:326:in `process_result'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/exec.rb:41:in `parse'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/lib/sass/exec.rb:21:in `parse!'
-/Library/Ruby/Gems/2.0.0/gems/sass-3.2.14/bin/sass:13:in `<top (required)>'
-/usr/bin/sass:23:in `load'
-/usr/bin/sass:23:in `<main>'
-*/
-body:before {
-  white-space: pre;
-  font-family: monospace;
-  content: "Syntax error: Invalid CSS after \".play_button{\": expected \"}\", was \"<<<<<<< HEAD\"\A         on line 3 of ./playwidget.scss\A \A 1: $widget_color: #0095DD;\A 2: .play_button{\A 3: <<<<<<< HEAD\A 4: 	vertical-align: middle;\A 5: =======\A 6: <<<<<<< HEAD\A 7: 	vertical-align: middle;\A 8: ======="; }
+.play_button #progress_bar_inner { stroke: #0095dd; }
+
+.play_button #stopped { display: none; }
+
+#track1_container svg, #track1_container span { display: inline-block; }
+
+#track1_container { vertical-align: middle; }
+
+#track1_container span { line-height: 30px; color: #0095DD; margin-left: 5px; float: left; }
+
+#track1_container span svg { float: left; }
 
 * { box-sizing: border-box; }
 
