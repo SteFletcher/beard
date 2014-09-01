@@ -2901,6 +2901,9 @@ $.fn.audioWidget = function(options) {
                 }
             });
         });
+<<<<<<< HEAD
+}
+=======
 }
 $(document).ready(function() {
     $('#track1_container').audioWidget({
@@ -2912,6 +2915,8 @@ $(document).ready(function() {
     //     title: 'Alo Bloc - Dollar'
     // });
 });
+>>>>>>> 8403c0d251b8f25c0e6a1c74d49b8c2eecd7c645
+
 // function setOffset(r, $progress_bar, val){ 
 //     var c = Math.PI*(r*2);
 //     var unitSize = c/100;

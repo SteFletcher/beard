@@ -1,6 +1,14 @@
 $widget_color: #0095DD;
 .play_button{
+<<<<<<< HEAD
 	vertical-align: middle;
+=======
+<<<<<<< HEAD
+	vertical-align: middle;
+=======
+	
+>>>>>>> 8403c0d251b8f25c0e6a1c74d49b8c2eecd7c645
+>>>>>>> 9b4ff53a98f45cee7fd82730e1ae62cda33c72c3
 }
 
 .play_button #progress_bar{
@@ -13,12 +21,21 @@ $widget_color: #0095DD;
 .play_button  #stopped{
   display: none;
 }
+<<<<<<< HEAD
+=======
+
+<<<<<<< HEAD
+>>>>>>> 9b4ff53a98f45cee7fd82730e1ae62cda33c72c3
 #track1_container svg, #track1_container span{
 	display:inline-block;
 }
 #track1_container{
 	vertical-align: middle;
+<<<<<<< HEAD
 }
+=======
+=======
+>>>>>>> 9b4ff53a98f45cee7fd82730e1ae62cda33c72c3
 #track1_container span{
       line-height: 30px;
       color: #0095DD;
@@ -27,4 +44,5 @@ $widget_color: #0095DD;
 }
 #track1_container span svg{
       float:left;
+>>>>>>> 8403c0d251b8f25c0e6a1c74d49b8c2eecd7c645
 }
